@@ -1,0 +1,76 @@
+//Advanced JS
+
+//for each loop
+
+var a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+//To loop over arrays use hota hai
+a.forEach(function (val) {
+  val = val * val;
+  console.log(val);
+});
+
+console.log(a);
+
+//To loop over objects use hota hai
+var obj = {
+  name: "Pavan",
+  age: 26,
+  city: "Dhule",
+};
+
+for(var key in obj){
+  console.log(key, obj[key]);
+}
+
+//Callback functions
+//jab be kooi aisa code jo baad mein chalta hai aap likhoge, kyuki wo code baad me chalta hai jsko pta nhi hota ke wo complete hua ya nhai aise code ke completion par js ko bataya jata hai ki wo complete hogya aur app usse chlaa sakte ho, yeh btane ke kaam callback ka hai
+
+//aisa code jo baad mein chalta hai use hum ek function de dete hai ke bhaiya jab complete ho jaana to yeh function chala dena, aur woh function jo hum dete hai wo ek normal function hota hai aur use kehte hai callback function
+
+//Example
+setTimeout(function(){
+  console.log("Payment Successful")
+},2000)
+
+
+//First Class Functions
+//This is a concept hai jiska matlab hota hai ki aap function ko use kar skte ho as a value
+
+function Test(a){
+  a();
+}
+Test(function(){console.log("Hello Pavan")});
+
+//How arrays are stored in behind the scenes
+
+var arr = [22,32,34,72,54];
+
+//This way array is stored in background Arrays is nothing but object only
+
+arr = {
+  0:22,
+  1:32,
+  2:34,
+  3:72,
+  4:54
+}
+
+console.log(typeof([])+"-----"+typeof({}));
+
+//So to know if we are working with object type or array type we can use Array.isArray()
+
+console.log(Array.isArray([])+"-----"+Array.isArray({}));
+
+//Deleting objects props
+var testObj = {
+  name : "Pavan",
+  age : 24,
+  city : "Dhule"
+}
+
+console.log(testObj);
+delete testObj.city;
+console.log(testObj);
+delete testObj.name;
+console.log(testObj);
