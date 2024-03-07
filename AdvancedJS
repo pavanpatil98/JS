@@ -1,5 +1,98 @@
 //Advanced JS
 
+// var old JS meln tha
+// var function scoped hota hai => var apne parent fnc
+//mein kahi bhi use ho sakta hai
+//var adds itself to the window object
+
+//let const new js mein hai
+//let const braces scoped hota hai
+//let const doesn't adds itself to window object
+
+// To explain window object point
+/*js language mein kuchh cheeje nahi hai jo hum use kar
+sakte hai aur wo cheeje hume js se nahi balki broser
+se milti hai, aise saare features jo js ka part nahi
+hai but fir bhi use kar sakte hai unhe hum dhoond
+sakte hai ek particular object mein jiska naam hai
+window*/
+//Like alert,prompt setTimeout is provided by window object
+
+/*js mein kai saare features hai par kuchh features jo
+hum use karte hai wo features wo nahi hai par fir bhi
+use kar paate hai kyoki wo features js langauge use kar
+leti hai window se, aur window hai ek box of features
+given by browser to use with js*/
+
+//Browser Context API
+/*
+1.Window Object(Set of features browser gives to us)
+2.Stack
+3.Heap Memory
+*/
+
+//Stack
+// Use to store primitive data's 
+
+//Excecution Context 
+/* execution context matlab jab bhi hum function
+chalaayege fnc apna ek khudka ek imaginary container
+bana lega jismein uski teen cheeje hogi
+ 1) variables
+ 2) functions inside that parent fnc
+ 3) lexical environment of that function
+  ye jp container hai imaginary ise hi hum execution context kahte
+ hai
+ */
+
+
+//Lexical Enviroment
+// So it is part of execution context & as var's are function scopred it is used to keep track of where the var's are accesible & where they are not.
+/*
+Example
+function test(){
+  var a = "Pavan";
+  function def(){
+    var b = "Patil"
+  }
+}
+/*Now here we have a & b
+So b is accessible in def() but a is not accessible in test()
+Similarly a is accessible in test() & accessible in def()
+so lexical env is nothing but this thing which keeps tracks of acessiblity of vars in diffrent functions.
+*/
+
+//How to copy refrence values
+//Problem
+var testArr = [1,2,3,4,5];
+var b = testArr;
+b.pop();
+console.log(testArr);
+console.log(b);
+//Here as ref is passed on so both testArr & b are hampered.
+
+//So this is the way to copy the values (not reference)
+var testArrP = [1,2,3,4,5];
+var testArrQ = [...testArrP];
+console.log(testArrP);
+console.log(testArrQ);
+
+//Same can be done for objects
+var testObj = {name:"Pavan",age:22};
+var ntestObj = {...testObj};
+ntestObj.name = "Praveen";
+console.log(testObj);
+console.log(ntestObj);
+
+
+//Truthy & Falsy
+/*js mein kuchh bhi likho wo mainly do prakaar mein se kisi ek
+prakaar ko belong karti hai
+// falsy values ye hai = 0, false, undefined, null, NaN, document. all
+// truthy values = all others
+*/
+
+
 //for each loop
 
 var a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
